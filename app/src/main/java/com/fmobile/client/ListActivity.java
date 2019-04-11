@@ -1,4 +1,4 @@
-package com.ramiara.top14client;
+package com.fmobile.client;
 //
 // Top 14 client
 //

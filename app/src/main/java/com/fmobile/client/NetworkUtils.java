@@ -1,4 +1,4 @@
-package com.ramiara.top14client;
+package com.fmobile.client;
 //
 // Classe utilitaire de gestion des connexions Internet
 //
