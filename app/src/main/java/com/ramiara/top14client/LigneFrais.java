@@ -19,7 +19,7 @@ public class LigneFrais {
     /**
      * Date du LigneFrais
      */
-    public Date date;
+    public String Date;
     /**
      * mibelle du trajet
      */
@@ -56,7 +56,7 @@ public class LigneFrais {
     public LigneFrais(JSONObject jsonObject) {
         try {
             id = jsonObject.getInt("Id");
-            date = jsonObject.getString("date");
+            Date = jsonObject.getString("date");
             trajet = jsonObject.getString("Trajet");
             km = jsonObject.getInt("Kilometres");
             peage = jsonObject.getInt("Peage");
@@ -77,7 +77,7 @@ public class LigneFrais {
     public String[] toArray() {
         String data[] = {
                 Integer.toString(id),
-                date,
+                Date,
                 trajet,
                 Integer.toString(km),
                 Integer.toString(peage),
