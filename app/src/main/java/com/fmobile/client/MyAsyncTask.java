@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 public class MyAsyncTask extends AsyncTask<String, Void, String> {
 
-    public static final String EXTRA_MESSAGE = "com.ramiara.top14client.MESSAGE";
+    public static final String EXTRA_MESSAGE = "com.fmobile.client.MESSAGE";
 
     // http://localhost/projets/top14server/clubs.php?user=jef&password=jefjef
     String MyURL = "http://172.17.2.105/BTS/PPE-G2/api/login.php";
@@ -79,13 +79,17 @@ public class MyAsyncTask extends AsyncTask<String, Void, String> {
             try {
                 // Récupère le contenu du fichier JSON
                 JSONObject jsonObject = new JSONObject(jsonString);
-                String message = jsonObject.getString("message");
-                Log.d(MainActivity.LOG_TAG, "message=" + message);  // Tests seulement
+
+           //     String message = jsonObject.getString("message");
+             //   Log.d(MainActivity.LOG_TAG, "message=" + message);  // Tests seulement
+
                 // Récupère la liste des LigneFrais
                 if (jsonObject.isNull("LigneFrais")==false) {
                     JSONArray LigneFraisArray = jsonObject.getJSONArray("LigneFrais");
+
                     // Boucle de lecture des LigneFrais
                     for (int i = 0; i < LigneFraisArray.length(); i++) {
+
                         JSONObject LigneFraisJsonObject = LigneFraisArray.getJSONObject(i);
                         // Crée un objet métier LigneFrais à partir de l'objet JSONObject
                         LigneFrais laLigneFrais = new LigneFrais(LigneFraisJsonObject);
@@ -123,17 +127,17 @@ public class MyAsyncTask extends AsyncTask<String, Void, String> {
 
         // Associe l'adapteur à la listView
         myListView.setAdapter(myAdapter);
-/*
+
         // Ajoute un gestionnaire d'événement sous la forme d'une classe anonyme
         myListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                        // Instancie le club pointé par le clic sur la listView
-                        Club myClub = myClubs.get(position);
+                        // Instancie le ligne  pointé par le clic sur la listView
+                        LigneFrais maLigneFrais = myLigneFrais.get(position);
                         // Transforme l'objet Club en array (tableau) pour pouvoir fournir les détails à l'activity suivante
                         // NOTA : les intents n'acceptent pas les objets, seulement des strings et des array de strings
-                        String myData[] = myClub.toArray();
+                        String myData[] = maLigneFrais.toArray();
                         // Création de l'intent pour DetailsActivity
                         Intent myIntent = new Intent(myContext, DetailsActivity.class);
                         // Ajoute dans l'intent le tableau contenant les détails du club
@@ -146,6 +150,6 @@ public class MyAsyncTask extends AsyncTask<String, Void, String> {
                     }
                 }
         );
-*/
+
     }
 }
