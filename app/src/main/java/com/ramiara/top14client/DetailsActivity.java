@@ -32,7 +32,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         // Affiche les données dans le layout
         myViewId = (TextView) findViewById(R.id.tv_id);
-        myViewId.setText("ID : " + myData[0]);
+        myViewId.setText("ID bordereau : " + myData[0]);
 
         myViewdate = (TextView) findViewById(R.id.tv_date);
         myViewdate.setText(myData[1]);
