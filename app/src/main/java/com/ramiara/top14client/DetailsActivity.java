@@ -12,11 +12,14 @@ public class DetailsActivity extends AppCompatActivity {
 
     Intent myIntent;
     TextView myViewId;
-    TextView myViewNom;
-    TextView myViewCouleurs;
-    TextView myViewStade;
-    TextView myViewEcusson;
-    TextView myViewClassement;
+    TextView myViewdate;
+    TextView myViewTrajets;
+    TextView myViewkm;
+    TextView myViewPeage;
+    TextView myViewRepas;
+    TextView myViewheberg;
+    TextView myViewMotif;
+    TextView myViewnom_club;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,20 +34,29 @@ public class DetailsActivity extends AppCompatActivity {
         myViewId = (TextView) findViewById(R.id.tv_id);
         myViewId.setText("ID : " + myData[0]);
 
-        myViewNom = (TextView) findViewById(R.id.tv_nom);
-        myViewNom.setText(myData[1]);
+        myViewdate = (TextView) findViewById(R.id.tv_date);
+        myViewdate.setText(myData[1]);
 
-        myViewCouleurs = (TextView) findViewById(R.id.tv_couleurs);
-        myViewCouleurs.setText("Couleurs : " + myData[2]);
+        myViewTrajets = (TextView) findViewById(R.id.tv_Trajets);
+        myViewTrajets.setText("Trajets : " + myData[2]);
 
-        myViewStade = (TextView) findViewById(R.id.tv_stade);
-        myViewStade.setText("Stade : " + myData[3]);
+        myViewkm = (TextView) findViewById(R.id.tv_km);
+        myViewkm.setText("km : " + myData[3]);
 
-        myViewEcusson = (TextView) findViewById(R.id.tv_ecusson);
-        myViewEcusson.setText("Ecusson : " + myData[4]);
+        myViewPeage = (TextView) findViewById(R.id.tv_Peage);
+        myViewPeage.setText("Peage : " + myData[4]);
 
-        myViewClassement = (TextView) findViewById(R.id.tv_classement);
-        myViewClassement.setText("Classement : " + myData[5]);
+        myViewRepas = (TextView) findViewById(R.id.tv_repas);
+        myViewRepas.setText("Repas : " + myData[5]);
+
+        myViewheberg = (TextView) findViewById(R.id.tv_heberg);
+        myViewheberg.setText("heberg : " + myData[6]);
+
+        myViewMotif = (TextView) findViewById(R.id.tv_motif);
+        myViewMotif.setText("Motif : " + myData[7]);
+
+        myViewnom_club = (TextView) findViewById(R.id.tv_nom_club);
+        myViewnom_club.setText("nom_club : " + myData[8]);
 
     }
 }

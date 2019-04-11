@@ -28,14 +28,14 @@ public class MyAsyncTask extends AsyncTask<String, Void, String> {
     public static final String EXTRA_MESSAGE = "com.ramiara.top14client.MESSAGE";
 
     // http://localhost/projets/top14server/clubs.php?user=jef&password=jefjef
-    String MyURL = "http://172.17.2.105/BTS/top14server/clubs.php";
-    //String MyUser = "jef";
+    String MyURL = "http://172.17.2.105/BTS/PPE-G2/api/login.php";
+    //String MyUser = "vinz@email.com";
     String MyUser;
-    //String MyPassword = "jefjef";
+    //String MyPassword = "vinzvinz";
     String MyPassword;
     ListView myListView;
     Context myContext;
-    ArrayList<Club> myClubs = new ArrayList<>();
+    ArrayList<LigneFrais> myLigneFrais = new ArrayList<>();
     ArrayList<String> myArrayList = new ArrayList<>();
     Activity myActivity;
 
@@ -81,21 +81,21 @@ public class MyAsyncTask extends AsyncTask<String, Void, String> {
                 JSONObject jsonObject = new JSONObject(jsonString);
                 String message = jsonObject.getString("message");
                 Log.d(MainActivity.LOG_TAG, "message=" + message);  // Tests seulement
-                // Récupère la liste des clubs
-                if (jsonObject.isNull("clubs")==false) {
-                    JSONArray clubsArray = jsonObject.getJSONArray("clubs");
-                    // Boucle de lecture des clubs
-                    for (int i = 0; i < clubsArray.length(); i++) {
-                        JSONObject clubJsonObject = clubsArray.getJSONObject(i);
-                        // Crée un objet métier Club à partir de l'objet JSONObject
-                        Club club = new Club(clubJsonObject);
-                        // Ajoute l'objet métier dans la collection ArrayList<Club>
-                        myClubs.add(club);
-                        // Ajoute le libellé du club dans la collection ArrayList<String>
-                        myArrayList.add(club.nom);
+                // Récupère la liste des LigneFrais
+                if (jsonObject.isNull("LigneFrais")==false) {
+                    JSONArray LigneFraisArray = jsonObject.getJSONArray("LigneFrais");
+                    // Boucle de lecture des LigneFrais
+                    for (int i = 0; i < LigneFraisArray.length(); i++) {
+                        JSONObject LigneFraisJsonObject = LigneFraisArray.getJSONObject(i);
+                        // Crée un objet métier LigneFrais à partir de l'objet JSONObject
+                        LigneFrais laLigneFrais = new LigneFrais(LigneFraisJsonObject);
+                        // Ajoute l'objet métier dans la collection ArrayList<LigneFrais>
+                        myLigneFrais.add(laLigneFrais);
+                        // Ajoute la date du LigneFrais dans la collection ArrayList<String>
+                        myArrayList.add(laLigneFrais.date);
                         // Affiche un message en bas de liste
                         TextView textView = (TextView) myActivity.findViewById(R.id.tv_message);
-                        textView.setText(String.valueOf(clubsArray.length()) + " club(s)");
+                        textView.setText(String.valueOf(LigneFraisArray.length()) + " lignes de frais(s)");
 
                     }
                 } else {
@@ -123,7 +123,7 @@ public class MyAsyncTask extends AsyncTask<String, Void, String> {
 
         // Associe l'adapteur à la listView
         myListView.setAdapter(myAdapter);
-
+/*
         // Ajoute un gestionnaire d'événement sous la forme d'une classe anonyme
         myListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
@@ -146,6 +146,6 @@ public class MyAsyncTask extends AsyncTask<String, Void, String> {
                     }
                 }
         );
-
+*/
     }
 }
