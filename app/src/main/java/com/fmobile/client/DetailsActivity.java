@@ -59,4 +59,10 @@ public class DetailsActivity extends AppCompatActivity {
         myViewnom_club.setText("nom_club : " + myData[8]);
 
     }
+/*
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent myIntent = new Intent(getApplicationContext(), ListActivity.class);
+        startActivityForResult(myIntent, 0);
+        return true;
+    }*/
 }

@@ -55,15 +55,15 @@ public class LigneFrais {
      */
     public LigneFrais(JSONObject jsonObject) {
         try {
-            id = jsonObject.getInt("Id");
-            date = jsonObject.getString("date");
+            id = jsonObject.getInt("IdBordereau");
+            date = jsonObject.getString("DateFrais");
             trajet = jsonObject.getString("Trajet");
-            km = jsonObject.getInt("Kilometres");
-            peage = jsonObject.getInt("Peage");
-            repas = jsonObject.getInt("Repas");
-            heberg = jsonObject.getInt("Hebergement");
+            km = jsonObject.getInt("KM");
+            peage = jsonObject.getInt("Peages");
+            repas = jsonObject.getInt("CoutRepas");
+            heberg = jsonObject.getInt("CoutHebergement");
             motif = jsonObject.getString("Motif");
-            nom_club = jsonObject.getString("Club");
+            nom_club = jsonObject.getString("NomClub");
         } catch (JSONException e) {
             Log.d(MainActivity.LOG_TAG,"Erreur lors de la conversion de l'objet JSON en objet LigneFrais");
             e.printStackTrace();

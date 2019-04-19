@@ -27,8 +27,9 @@ public class MyAsyncTask extends AsyncTask<String, Void, String> {
 
     public static final String EXTRA_MESSAGE = "com.fmobile.client.MESSAGE";
 
-    // http://localhost/projets/top14server/clubs.php?user=jef&password=jefjef
-    String MyURL = "http://172.17.2.105/BTS/PPE-G2/api/login.php";
+    // http://localhost/BTS/PPE-G2/api/login.php?user=vinz@email.com&password=vinzvinz
+    // http://172.17.5.61/PPEG2/api/login.php?user=ben@ben.com&password=benben
+    String MyURL = "http://172.17.5.61/PPEG2/api/login.php";
     //String MyUser = "vinz@email.com";
     String MyUser;
     //String MyPassword = "vinzvinz";
@@ -80,8 +81,6 @@ public class MyAsyncTask extends AsyncTask<String, Void, String> {
                 // Récupère le contenu du fichier JSON
                 JSONObject jsonObject = new JSONObject(jsonString);
 
-           //     String message = jsonObject.getString("message");
-             //   Log.d(MainActivity.LOG_TAG, "message=" + message);  // Tests seulement
 
                 // Récupère la liste des LigneFrais
                 if (jsonObject.isNull("LigneFrais")==false) {
