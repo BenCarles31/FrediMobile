@@ -32,31 +32,31 @@ public class DetailsActivity extends AppCompatActivity {
 
         // Affiche les données dans le layout
         myViewId = (TextView) findViewById(R.id.tv_id);
-        myViewId.setText("ID bordereau : " + myData[0]);
+        myViewId.setText("ID Bordereau : " + myData[0]);
 
         myViewdate = (TextView) findViewById(R.id.tv_date);
-        myViewdate.setText(myData[1]);
+        myViewdate.setText("Date du trajet : " + myData[1]);
 
         myViewTrajets = (TextView) findViewById(R.id.tv_Trajets);
-        myViewTrajets.setText("Trajets : " + myData[2]);
+        myViewTrajets.setText("Trajet : " + myData[2]);
 
         myViewkm = (TextView) findViewById(R.id.tv_km);
-        myViewkm.setText("km : " + myData[3]);
+        myViewkm.setText("Distance : " + myData[3] + " kms");
 
         myViewPeage = (TextView) findViewById(R.id.tv_Peage);
-        myViewPeage.setText("Peage : " + myData[4]);
+        myViewPeage.setText("Peage : " + myData[4] + " €");
 
         myViewRepas = (TextView) findViewById(R.id.tv_repas);
-        myViewRepas.setText("Repas : " + myData[5]);
+        myViewRepas.setText("Repas : " + myData[5] + " €");
 
         myViewheberg = (TextView) findViewById(R.id.tv_heberg);
-        myViewheberg.setText("heberg : " + myData[6]);
+        myViewheberg.setText("Hebergement : " + myData[6] + " €");
 
         myViewMotif = (TextView) findViewById(R.id.tv_motif);
         myViewMotif.setText("Motif : " + myData[7]);
 
         myViewnom_club = (TextView) findViewById(R.id.tv_nom_club);
-        myViewnom_club.setText("nom_club : " + myData[8]);
+        myViewnom_club.setText("Nom du Club : " + myData[8]);
 
     }
 /*
