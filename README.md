@@ -1,4 +1,4 @@
-# FrediMobile Clien
+# FrediMobile Client
 Client Android pour l'application FrediMobile
 
 ## Description
